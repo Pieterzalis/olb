@@ -1,2 +1,8 @@
-# olb
-Códigos da OLB
+# OLB
+
+Nesse repositório trago os principais códigos no meu trabalho como cientista de dados no Observatório Legislativo Brasileiro. 
+
+O que você encontra aqui:
+- códigos em Python para extrair os dados da API da Câmara
+- códigos de projetos específicos de machine learning 
+- Temas em R para Visualização de Dados
