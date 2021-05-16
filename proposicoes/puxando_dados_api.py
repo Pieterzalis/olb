@@ -11,3 +11,23 @@ def proposicoes_api_camara(data):
   df_ano = pd.read_csv(io.StringIO(resp.decode('utf-8')),sep=';')
   df_ano = df_ano[df_ano['siglaTipo'].isin(['PL','PLP','PEC','MPV'])]
   return df_ano
+
+
+def tema_proposicao(id_materia):
+  """ 
+  input: identificador da proposicao legislativa
+  output: uma string com os temas da indexacao da camara. No caso de mais de uma a divisão é feita por uma vírgula
+  """
+  
+  url_proposicoes = 'https://dadosabertos.camara.leg.br/api/v2/proposicoes/materia/temas'
+  url_proposicoes = url_proposicoes.replace('materia',id_materia)
+  resp = requests.get(url_ano).content
+  try:
+        resp = requests.get(url).json() 
+        temas_materia = []
+        for i in resp['dados']:
+            temas_materia.append(i['tema'])
+        return ','.join(temas_materia)
+  except:
+        return ''
+
