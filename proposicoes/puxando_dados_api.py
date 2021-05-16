@@ -18,10 +18,9 @@ def tema_proposicao(id_materia):
   input: identificador da proposicao legislativa
   output: uma string com os temas da indexacao da camara. No caso de mais de uma a divisão é feita por uma vírgula
   """
-  
-  url_proposicoes = 'https://dadosabertos.camara.leg.br/api/v2/proposicoes/materia/temas'
-  url_proposicoes = url_proposicoes.replace('materia',id_materia)
-  resp = requests.get(url_ano).content
+  id_materia = str(id_materia)
+  url  = 'https://dadosabertos.camara.leg.br/api/v2/proposicoes/materia/temas'
+  url = url_proposicoes.replace('materia',id_materia)
   try:
         resp = requests.get(url).json() 
         temas_materia = []
