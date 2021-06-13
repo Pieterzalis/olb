@@ -20,7 +20,7 @@ def tema_proposicao(id_materia):
   """
   id_materia = str(id_materia)
   url  = 'https://dadosabertos.camara.leg.br/api/v2/proposicoes/materia/temas'
-  url = url_proposicoes.replace('materia',id_materia)
+  url = url.replace('materia',id_materia)
   try:
         resp = requests.get(url).json() 
         temas_materia = []
